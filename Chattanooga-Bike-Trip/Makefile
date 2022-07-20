@@ -5,11 +5,13 @@ SOURCE_DIR = src
 INCLUDE_DIR = include
 BUILD_DIR = build
 
-main : 
-	$(CC) $(CFLAGS) $(SOURCE_DIR)/*.cu -o Chattanooga-Bike-Trip.bin
+main : $(BUILD_DIR)
 
 run : main
-	./Chattanooga-Bike-Trip.bin Bike_Chattanooga_Trip_Data.csv
+	./Chattanooga-Bike-Trip Bike_Chattanooga_Trip_Data.csv
 
 clean:
-	rm -r ./*.bin
+	rm -rf $(BUILD_DIR)
+
+$(BUILD_DIR) : 
+	$(CC) $(CFLAGS) $(SOURCE_DIR)/*.cu -o Chattanooga-Bike-Trip
