@@ -6,7 +6,10 @@ INCLUDE_DIR = include
 BUILD_DIR = build
 
 main : 
-	$(CC) $(CFLAGS) $(SOURCE_DIR)/*.cu -o Chattanooga-Bike-Trip
+	$(CC) $(CFLAGS) $(SOURCE_DIR)/*.cu -o Chattanooga-Bike-Trip.bin
 
 run : main
-	./Chattanooga-Bike-Trip Bike_Chattanooga_Trip_Data.csv
+	./Chattanooga-Bike-Trip.bin Bike_Chattanooga_Trip_Data.csv
+
+clean:
+	rm -r ./*.bin

@@ -2,11 +2,18 @@
 
 #include <iostream>
 #include <fstream>
-
-void parse_data(const char* fileName);
+#include <sstream>
+#include <iostream>
+#include <stdlib.h>
+#include <cstring>
+#include <vector>
 
 typedef struct {
-    double startingPoint;
-    double endPoint;
+    double startingX;
+    double startingY;
+    double endX;
+    double endY;
     double rideTime;
-} Bike;
+} BikeTrip;
+
+std::vector<BikeTrip> parse_data(const char*);

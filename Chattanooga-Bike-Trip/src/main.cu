@@ -1,5 +1,3 @@
-#include <iostream> 
-#include <fstream>
 #include "suiData.h"
 
 int main (int argc, char** argv) {
@@ -10,6 +8,9 @@ int main (int argc, char** argv) {
     } else {
         fileName = argv[1];
     }
-    parse_data(fileName);
+
+    std::vector<BikeTrip> trips = parse_data(fileName);
+    std::cout << trips.size() << std::endl;
+    
     return 0;
 }
